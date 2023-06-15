@@ -44,14 +44,6 @@ Update the hash with a new piece of data. `data` should be a buffer or uint8arra
 
 Digest the hash.
 
-#### `hash.getPartialHash()`
-
-Returns the current partial hash.
-
-#### `hash.setPartialHash(data)`
-
-Set the hash to a previously set hash. `data` should be the result of `getPartialHash()` (which returns uint8array)
-
 #### `var promise = blake2b.ready([cb])`
 
 Wait for the WASM code to load. Returns the WebAssembly instance promise as well for convenience.
@@ -63,11 +55,21 @@ There is a browser example included in [example.html](example.html) and [example
 
 ## Contributing
 
-The bulk of this module is implemented in WebAssembly in the [blake2b.wat](blake2b.wat) file. To build the thin Javascript wrapper do:
+The bulk of this module is implemented in WebAssembly in the [blake2b.wat](blake2b.wat) file.
+The format of this file is S-Expressions that can be compiled to their binary WASM representation by doing
 
 ```
-npm run compile
+wat2wasm blake2b.wat -o blake2b.wasm
 ```
+
+To build the thin Javascript wrapper for the WASM module use `wat2js`:
+
+```
+# also available as `npm run compile`
+wat2js blake2b.wat -o blake2b.js
+```
+
+If you do not have `wat2wasm` installed follow the instructions here, https://github.com/WebAssembly/wabt
 
 ## License
 
