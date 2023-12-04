@@ -19,12 +19,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mafintosh/blake2b-wasm.git"
+    "url": "https://github.com/bitcandy/blake2b-wasm.git"
   },
   "author": "Mathias Buus (@mafintosh)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mafintosh/blake2b-wasm/issues"
+    "url": "https://github.com/bitcandy/blake2b-wasm/issues"
   },
-  "homepage": "https://github.com/mafintosh/blake2b-wasm"
+  "homepage": "https://github.com/bitcandy/blake2b-wasm"
 }
